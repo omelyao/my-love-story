@@ -9,7 +9,7 @@ import '../app/styles/global.css'
 createRoot(document.getElementById('root')!).render(
    <StrictMode>
       <Provider store={store}>
-         <BrowserRouter>
+         <BrowserRouter basename="/my-love-story">
             <App />
          </BrowserRouter>
       </Provider>
