@@ -1,0 +1,490 @@
+.createSection {
+   width: min(1100px, calc(100% - 40px));
+
+   margin: 70px auto 50px;
+}
+
+
+/* ========================================
+   КНОПКА ОТКРЫТИЯ
+======================================== */
+
+.openButton {
+   width: 100%;
+
+   min-height: 90px;
+
+   padding: 20px;
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 12px;
+
+   color: #a13d5b;
+
+   background: rgba(255, 255, 255, 0.55);
+
+   border: 1px dashed #e8a7ba;
+   border-radius: 24px;
+
+   font-size: 17px;
+   font-weight: 600;
+
+   cursor: pointer;
+
+   box-shadow:
+      0 10px 30px rgba(180, 60, 100, 0.08);
+
+   backdrop-filter: blur(12px);
+
+   transition:
+      transform 0.25s ease,
+      background 0.25s ease,
+      box-shadow 0.25s ease;
+}
+
+.openButton span {
+   width: 34px;
+   height: 34px;
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   color: white;
+
+   background: linear-gradient(
+      135deg,
+      #ff6b8a,
+      #e83e6f
+   );
+
+   border-radius: 50%;
+
+   font-size: 25px;
+   font-weight: 400;
+}
+
+.openButton:hover {
+   transform: translateY(-3px);
+
+   background: rgba(255, 255, 255, 0.8);
+
+   box-shadow:
+      0 15px 35px rgba(180, 60, 100, 0.13);
+}
+
+
+/* ========================================
+   FORM CARD
+======================================== */
+
+.formCard {
+   padding: 35px;
+
+   background: rgba(255, 255, 255, 0.7);
+
+   border: 1px solid rgba(255, 255, 255, 0.85);
+
+   border-radius: 28px;
+
+   box-shadow:
+      0 20px 60px rgba(180, 60, 100, 0.12),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+
+   backdrop-filter: blur(15px);
+
+   animation:
+      formAppear 0.35s ease forwards;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.formHeader {
+   display: flex;
+   align-items: flex-start;
+   justify-content: space-between;
+
+   margin-bottom: 30px;
+}
+
+.formHeart {
+   margin-bottom: 5px;
+
+   font-size: 28px;
+}
+
+.formHeader h2 {
+   margin: 0 0 5px;
+
+   color: #6f2942;
+
+   font-size: 25px;
+}
+
+.formHeader p {
+   margin: 0;
+
+   color: #a06b7c;
+
+   font-size: 14px;
+}
+
+.closeButton {
+   width: 38px;
+   height: 38px;
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   color: #a65b70;
+
+   background: rgba(255, 255, 255, 0.8);
+
+   border: 1px solid #f2c5d1;
+   border-radius: 50%;
+
+   font-size: 25px;
+
+   cursor: pointer;
+
+   transition:
+      background 0.2s ease,
+      transform 0.2s ease;
+}
+
+.closeButton:hover {
+   background: white;
+
+   transform: rotate(5deg);
+}
+
+
+/* ========================================
+   FORM
+======================================== */
+
+.form {
+   display: flex;
+   flex-direction: column;
+
+   gap: 22px;
+}
+
+.field {
+   display: flex;
+   flex-direction: column;
+
+   gap: 8px;
+}
+
+.field label {
+   color: #713247;
+
+   font-size: 14px;
+   font-weight: 600;
+}
+
+
+/* ========================================
+   INPUTS
+======================================== */
+
+.field input[type='text'],
+.field textarea {
+   width: 100%;
+
+   box-sizing: border-box;
+
+   padding: 14px 16px;
+
+   color: #522532;
+
+   background: rgba(255, 255, 255, 0.75);
+
+   border: 1px solid #efc7d3;
+   border-radius: 14px;
+
+   outline: none;
+
+   font-family: inherit;
+   font-size: 15px;
+
+   transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease;
+}
+
+.field input[type='text']:focus,
+.field textarea:focus {
+   border-color: #e75480;
+
+   box-shadow:
+      0 0 0 4px rgba(231, 84, 128, 0.1);
+}
+
+.field textarea {
+   resize: vertical;
+
+   min-height: 120px;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+   color: #c296a5;
+}
+
+
+/* ========================================
+   IMAGE INPUT
+======================================== */
+
+.imageInput {
+   position: relative;
+
+   min-height: 220px;
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   overflow: hidden;
+
+   background:
+      linear-gradient(
+         135deg,
+         rgba(255, 240, 245, 0.9),
+         rgba(255, 220, 232, 0.7)
+      );
+
+   border: 2px dashed #e6a6b9;
+   border-radius: 20px;
+
+   cursor: pointer;
+
+   transition:
+      border-color 0.2s ease,
+      background 0.2s ease;
+}
+
+.imageInput:hover {
+   border-color: #e75480;
+
+   background:
+      linear-gradient(
+         135deg,
+         rgba(255, 235, 242, 1),
+         rgba(255, 211, 226, 0.85)
+      );
+}
+
+.imageInput input {
+   position: absolute;
+
+   width: 1px;
+   height: 1px;
+
+   opacity: 0;
+}
+
+.imagePlaceholder {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+
+   gap: 7px;
+
+   color: #a15d73;
+
+   text-align: center;
+}
+
+.imagePlaceholder span {
+   margin-bottom: 5px;
+
+   font-size: 42px;
+}
+
+.imagePlaceholder strong {
+   color: #8e304d;
+
+   font-size: 16px;
+}
+
+.imagePlaceholder small {
+   color: #b07b8b;
+
+   font-size: 12px;
+}
+
+
+/* ========================================
+   PREVIEW
+======================================== */
+
+.preview {
+   width: 100%;
+   height: 300px;
+
+   display: block;
+
+   object-fit: contain;
+
+   background: rgba(255, 255, 255, 0.5);
+}
+
+
+/* ========================================
+   ERROR
+======================================== */
+
+.error {
+   padding: 12px 15px;
+
+   color: #a43857;
+
+   background: rgba(255, 220, 230, 0.8);
+
+   border: 1px solid #f0b9c8;
+   border-radius: 12px;
+
+   font-size: 14px;
+}
+
+
+/* ========================================
+   ACTIONS
+======================================== */
+
+.formActions {
+   display: flex;
+   justify-content: flex-end;
+
+   gap: 12px;
+
+   padding-top: 5px;
+}
+
+.cancelButton,
+.submitButton {
+   padding: 13px 22px;
+
+   border-radius: 50px;
+
+   font-family: inherit;
+   font-size: 14px;
+   font-weight: 600;
+
+   cursor: pointer;
+
+   transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+}
+
+.cancelButton {
+   color: #a65b70;
+
+   background: rgba(255, 255, 255, 0.8);
+
+   border: 1px solid #efc5d1;
+}
+
+.submitButton {
+   color: white;
+
+   background: linear-gradient(
+      135deg,
+      #ff6b8a,
+      #e83e6f
+   );
+
+   border: none;
+
+   box-shadow:
+      0 8px 20px rgba(232, 62, 111, 0.25);
+}
+
+.cancelButton:hover,
+.submitButton:hover {
+   transform: translateY(-2px);
+}
+
+.submitButton:hover {
+   box-shadow:
+      0 12px 25px rgba(232, 62, 111, 0.35);
+}
+
+.cancelButton:disabled,
+.submitButton:disabled {
+   opacity: 0.6;
+
+   cursor: not-allowed;
+
+   transform: none;
+}
+
+
+/* ========================================
+   ANIMATION
+======================================== */
+
+@keyframes formAppear {
+   from {
+      opacity: 0;
+
+      transform: translateY(15px);
+   }
+
+   to {
+      opacity: 1;
+
+      transform: translateY(0);
+   }
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+   .createSection {
+      width: calc(100% - 30px);
+
+      margin-top: 50px;
+   }
+
+   .formCard {
+      padding: 25px 18px;
+
+      border-radius: 22px;
+   }
+
+   .formHeader h2 {
+      font-size: 21px;
+   }
+
+   .imageInput {
+      min-height: 190px;
+   }
+
+   .preview {
+      height: 250px;
+   }
+
+   .formActions {
+      flex-direction: column-reverse;
+   }
+
+   .cancelButton,
+   .submitButton {
+      width: 100%;
+   }
+}

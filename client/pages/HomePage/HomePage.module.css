@@ -1,0 +1,1087 @@
+.homePage {
+   min-height: 100vh;
+   overflow: hidden;
+
+   color: #4a2633;
+
+   background:
+      radial-gradient(
+         circle at 20% 20%,
+         rgba(255, 182, 193, 0.35),
+         transparent 30%
+      ),
+      radial-gradient(
+         circle at 80% 80%,
+         rgba(255, 105, 180, 0.2),
+         transparent 30%
+      ),
+      linear-gradient(
+         135deg,
+         #fff0f5 0%,
+         #ffe4ec 50%,
+         #ffd6e5 100%
+      );
+}
+
+/* ========================================
+   ОСНОВНОЙ КОНТЕЙНЕР
+======================================== */
+
+.loveContainer {
+   position: relative;
+
+   min-height: calc(100vh - 70px);
+
+   padding: 40px 20px;
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+/* ========================================
+   КАРТОЧКА
+======================================== */
+
+.loveCard {
+   position: relative;
+
+   width: min(520px, 100%);
+   min-height: 420px;
+
+   padding: 55px 40px;
+
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+
+   overflow: hidden;
+
+   text-align: center;
+
+   background: rgba(255, 255, 255, 0.6);
+
+   border: 1px solid rgba(255, 255, 255, 0.8);
+
+   border-radius: 32px;
+
+   box-shadow:
+      0 25px 70px rgba(180, 60, 100, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+
+   backdrop-filter: blur(15px);
+}
+
+/* ========================================
+   ЗАГОЛОВОК
+======================================== */
+
+.title {
+   margin: 0;
+
+   color: #522532;
+
+   font-size: clamp(34px, 6vw, 48px);
+   font-weight: 700;
+
+   letter-spacing: -1.5px;
+}
+
+.title span {
+   color: #e75480;
+}
+
+/* ========================================
+   ОБЛАСТЬ КНОПОК
+======================================== */
+
+.buttons {
+   position: relative;
+
+   width: 100%;
+   height: 150px;
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+/* ========================================
+   КНОПКА "ДА"
+======================================== */
+
+.yesButton {
+   position: relative;
+   z-index: 2;
+
+   padding: 14px 28px;
+
+   color: white;
+
+   background: linear-gradient(
+      135deg,
+      #ff6b8a,
+      #e83e6f
+   );
+
+   border: none;
+   border-radius: 50px;
+
+   font-size: 16px;
+   font-weight: 600;
+
+   cursor: pointer;
+
+   box-shadow:
+      0 10px 25px rgba(232, 62, 111, 0.3);
+
+   transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
+}
+
+.yesButton:hover {
+   transform: scale(1.06);
+
+   box-shadow:
+      0 14px 30px rgba(232, 62, 111, 0.4);
+}
+
+/* ========================================
+   КНОПКА "НЕТ"
+======================================== */
+
+.noButton {
+   position: absolute;
+   z-index: 3;
+
+   padding: 14px 28px;
+
+   color: #a65b70;
+
+   background: rgba(255, 255, 255, 0.9);
+
+   border: 1px solid #f2c5d1;
+   border-radius: 50px;
+
+   font-size: 16px;
+   font-weight: 600;
+
+   cursor: pointer;
+
+   box-shadow:
+      0 6px 15px rgba(150, 70, 90, 0.1);
+
+   transition:
+      left 0.15s ease-out,
+      top 0.15s ease-out,
+      box-shadow 0.2s ease;
+}
+
+.noButton:hover {
+   box-shadow:
+      0 10px 25px rgba(150, 70, 90, 0.2);
+}
+
+/* ========================================
+   ИСЧЕЗНОВЕНИЕ "НЕТ"
+======================================== */
+
+.hidden {
+   display: none;
+}
+
+/* ========================================
+   ВОСПОМИНАНИЕ
+======================================== */
+
+.memory {
+   width: 100%;
+
+   margin-top: 20px;
+   padding: 22px 25px;
+
+   border-radius: 20px;
+
+   background: rgba(255, 225, 234, 0.7);
+
+   animation:
+      appear 0.6s ease forwards;
+}
+
+.memoryHeart {
+   margin-bottom: 5px;
+
+   font-size: 32px;
+}
+
+.memory h2 {
+   margin: 0 0 8px;
+
+   color: #8e304d;
+
+   font-size: 20px;
+}
+
+.memory p {
+   margin: 0;
+
+   color: #9b6575;
+
+   font-size: 14px;
+   line-height: 1.5;
+}
+
+/* ========================================
+   ФОНОВЫЕ СЕРДЕЧКИ
+======================================== */
+
+.hearts {
+   position: absolute;
+   inset: 0;
+
+   pointer-events: none;
+}
+
+.hearts span {
+   position: absolute;
+
+   color: rgba(224, 78, 117, 0.18);
+
+   font-size: 40px;
+
+   animation:
+      float 7s ease-in-out infinite;
+}
+
+.hearts span:nth-child(1) {
+   top: 20%;
+   left: 10%;
+}
+
+.hearts span:nth-child(2) {
+   bottom: 15%;
+   left: 20%;
+
+   font-size: 25px;
+
+   animation-delay: 1s;
+}
+
+.hearts span:nth-child(3) {
+   top: 18%;
+   right: 15%;
+
+   font-size: 55px;
+
+   animation-delay: 2s;
+}
+
+.hearts span:nth-child(4) {
+   right: 8%;
+   bottom: 20%;
+
+   font-size: 30px;
+
+   animation-delay: 3s;
+}
+
+.hearts span:nth-child(5) {
+   top: 8%;
+   left: 50%;
+
+   font-size: 25px;
+
+   animation-delay: 4s;
+}
+
+/* ========================================
+   ПРАЗДНИК
+======================================== */
+
+.celebration {
+   position: fixed;
+   z-index: 1000;
+
+   inset: 0;
+
+   pointer-events: none;
+
+   overflow: hidden;
+}
+
+/* ========================================
+   УРАААА
+======================================== */
+
+.celebrationText {
+   position: fixed;
+
+   z-index: 1100;
+
+   top: 82px;
+   left: 50%;
+
+   transform: translateX(-50%);
+
+   color: #e83e6f;
+
+   font-size: clamp(30px, 6vw, 52px);
+   font-weight: 800;
+
+   white-space: nowrap;
+
+   text-shadow:
+      0 3px 12px rgba(232, 62, 111, 0.2);
+
+   animation:
+      celebrationText 4.8s ease-out forwards;
+}
+
+/* ========================================
+   ЦЕНТРАЛЬНЫЙ ВЗРЫВ СЕРДЕЧЕК
+======================================== */
+
+.heartExplosion {
+   position: fixed;
+
+   z-index: 1050;
+
+   top: 50%;
+   left: 50%;
+
+   width: 20px;
+   height: 20px;
+
+   transform: translate(-50%, -50%);
+
+   pointer-events: none;
+
+   animation:
+      explosionFade 4.0s ease-out forwards;
+}
+
+/* ========================================
+   СЕРДЕЧКИ
+======================================== */
+
+.heartExplosion span {
+   position: absolute;
+
+   top: 0;
+   left: 0;
+
+   color: #ff5c8a;
+
+   font-size: 22px;
+   line-height: 1;
+
+   opacity: 0;
+
+   text-shadow:
+      0 0 8px rgba(255, 92, 138, 0.5),
+      0 0 18px rgba(255, 92, 138, 0.3);
+
+   animation:
+      heartFly 4.0s
+      cubic-bezier(0.15, 0.8, 0.25, 1)
+      forwards;
+}
+
+/* ========================================
+   НАПРАВЛЕНИЯ СЕРДЕЧЕК
+======================================== */
+
+.heartExplosion span:nth-child(1) {
+   --x: -180px;
+   --y: -150px;
+}
+
+.heartExplosion span:nth-child(2) {
+   --x: -130px;
+   --y: -210px;
+}
+
+.heartExplosion span:nth-child(3) {
+   --x: -55px;
+   --y: -240px;
+}
+
+.heartExplosion span:nth-child(4) {
+   --x: 45px;
+   --y: -230px;
+}
+
+.heartExplosion span:nth-child(5) {
+   --x: 130px;
+   --y: -200px;
+}
+
+.heartExplosion span:nth-child(6) {
+   --x: 200px;
+   --y: -130px;
+}
+
+.heartExplosion span:nth-child(7) {
+   --x: 250px;
+   --y: -40px;
+}
+
+.heartExplosion span:nth-child(8) {
+   --x: 240px;
+   --y: 60px;
+}
+
+.heartExplosion span:nth-child(9) {
+   --x: 190px;
+   --y: 140px;
+}
+
+.heartExplosion span:nth-child(10) {
+   --x: 110px;
+   --y: 200px;
+}
+
+.heartExplosion span:nth-child(11) {
+   --x: 20px;
+   --y: 240px;
+}
+
+.heartExplosion span:nth-child(12) {
+   --x: -70px;
+   --y: 220px;
+}
+
+.heartExplosion span:nth-child(13) {
+   --x: -150px;
+   --y: 180px;
+}
+
+.heartExplosion span:nth-child(14) {
+   --x: -220px;
+   --y: 110px;
+}
+
+.heartExplosion span:nth-child(15) {
+   --x: -250px;
+   --y: 10px;
+}
+
+.heartExplosion span:nth-child(16) {
+   --x: -220px;
+   --y: -80px;
+}
+
+.heartExplosion span:nth-child(17) {
+   --x: -110px;
+   --y: -130px;
+}
+
+.heartExplosion span:nth-child(18) {
+   --x: 100px;
+   --y: -120px;
+}
+
+.heartExplosion span:nth-child(19) {
+   --x: 150px;
+   --y: 80px;
+}
+
+.heartExplosion span:nth-child(20) {
+   --x: -100px;
+   --y: 100px;
+}
+
+/* ========================================
+   ЦВЕТА СЕРДЕЧЕК
+======================================== */
+
+.heartExplosion span:nth-child(3n) {
+   color: #ff6b8a;
+}
+
+.heartExplosion span:nth-child(3n + 1) {
+   color: #e83e6f;
+}
+
+.heartExplosion span:nth-child(3n + 2) {
+   color: #ff9fba;
+}
+
+/* ========================================
+   РАЗМЕРЫ
+======================================== */
+
+.heartExplosion span:nth-child(2n) {
+   font-size: 18px;
+}
+
+.heartExplosion span:nth-child(3n) {
+   font-size: 26px;
+}
+
+.heartExplosion span:nth-child(5n) {
+   font-size: 30px;
+}
+
+/* ========================================
+   БУМ
+======================================== */
+
+.heartExplosion::before {
+   content: '';
+
+   position: absolute;
+
+   top: 50%;
+   left: 50%;
+
+   width: 25px;
+   height: 25px;
+
+   border-radius: 50%;
+
+   background: #fff;
+
+   transform:
+      translate(-50%, -50%)
+      scale(0);
+
+   box-shadow:
+      0 0 15px #fff,
+      0 0 30px #ff6b8a,
+      0 0 60px #ff6b8a;
+
+   animation:
+      boom 0.65s ease-out forwards;
+}
+
+/* ========================================
+   МНОГО ФЕЙЕРВЕРКОВ
+======================================== */
+
+/*
+   Каждый .firework — отдельный салют.
+   Они находятся поверх страницы,
+   но ниже надписи.
+*/
+
+.fireworks {
+   position: fixed;
+   z-index: 1020;
+
+   inset: 0;
+
+   pointer-events: none;
+}
+
+/* Общий фейерверк */
+
+.firework {
+   position: absolute;
+
+   width: 8px;
+   height: 8px;
+
+   border-radius: 50%;
+
+   animation:
+      fireworkAppear 2.8s ease-out forwards;
+}
+
+/* Точки расположения */
+
+.firework:nth-child(1) {
+   top: 18%;
+   left: 12%;
+}
+
+.firework:nth-child(2) {
+   top: 24%;
+   left: 30%;
+
+   animation-delay: 0.15s;
+}
+
+.firework:nth-child(3) {
+   top: 15%;
+   left: 50%;
+
+   animation-delay: 0.3s;
+}
+
+.firework:nth-child(4) {
+   top: 22%;
+   left: 72%;
+
+   animation-delay: 0.45s;
+}
+
+.firework:nth-child(5) {
+   top: 15%;
+   left: 90%;
+
+   animation-delay: 0.6s;
+}
+
+.firework:nth-child(6) {
+   top: 40%;
+   left: 8%;
+
+   animation-delay: 0.25s;
+}
+
+.firework:nth-child(7) {
+   top: 38%;
+   left: 92%;
+
+   animation-delay: 0.5s;
+}
+
+.firework:nth-child(8) {
+   top: 65%;
+   left: 12%;
+
+   animation-delay: 0.35s;
+}
+
+.firework:nth-child(9) {
+   top: 70%;
+   left: 32%;
+
+   animation-delay: 0.55s;
+}
+
+.firework:nth-child(10) {
+   top: 65%;
+   left: 70%;
+
+   animation-delay: 0.2s;
+}
+
+.firework:nth-child(11) {
+   top: 72%;
+   left: 88%;
+
+   animation-delay: 0.65s;
+}
+
+.firework:nth-child(12) {
+   top: 48%;
+   left: 18%;
+
+   animation-delay: 0.4s;
+}
+
+.firework:nth-child(13) {
+   top: 48%;
+   left: 82%;
+
+   animation-delay: 0.7s;
+}
+
+/* ========================================
+   ЛУЧИ ФЕЙЕРВЕРКА
+======================================== */
+
+.firework::before,
+.firework::after {
+   content: '';
+
+   position: absolute;
+
+   top: 50%;
+   left: 50%;
+
+   width: 150px;
+   height: 150px;
+
+   transform:
+      translate(-50%, -50%)
+      scale(0);
+
+   border-radius: 50%;
+
+   background:
+      radial-gradient(
+         circle,
+         currentColor 0 3px,
+         transparent 4px
+      );
+
+   background-size: 30px 30px;
+
+   animation:
+      fireworkBurst 1.4s ease-out forwards;
+}
+
+.firework::after {
+   transform:
+      translate(-50%, -50%)
+      rotate(45deg)
+      scale(0);
+
+   animation-delay: 0.05s;
+}
+
+/* ========================================
+   РАЗНЫЕ ЦВЕТА САЛЮТОВ
+======================================== */
+
+.firework:nth-child(4n + 1) {
+   color: #ff4f81;
+}
+
+.firework:nth-child(4n + 2) {
+   color: #ffd166;
+}
+
+.firework:nth-child(4n + 3) {
+   color: #c084fc;
+}
+
+.firework:nth-child(4n) {
+   color: #67e8f9;
+}
+
+/* ========================================
+   РАЗНЫЕ РАЗМЕРЫ
+======================================== */
+
+.firework:nth-child(3n) {
+   transform: scale(1.3);
+}
+
+.firework:nth-child(5n) {
+   transform: scale(0.75);
+}
+
+/* ========================================
+   ВСПЫШКА ФЕЙЕРВЕРКА
+======================================== */
+
+@keyframes fireworkBurst {
+   0% {
+      opacity: 0;
+
+      transform:
+         translate(-50%, -50%)
+         scale(0);
+   }
+
+   15% {
+      opacity: 1;
+
+      transform:
+         translate(-50%, -50%)
+         scale(0.35);
+   }
+
+   45% {
+      opacity: 1;
+
+      transform:
+         translate(-50%, -50%)
+         scale(1);
+   }
+
+   75% {
+      opacity: 0.8;
+
+      transform:
+         translate(-50%, -50%)
+         scale(1.25);
+   }
+
+   100% {
+      opacity: 0;
+
+      transform:
+         translate(-50%, -50%)
+         scale(1.5);
+   }
+}
+
+@keyframes fireworkAppear {
+   0% {
+      opacity: 0;
+      transform: scale(0);
+   }
+
+   15% {
+      opacity: 1;
+      transform: scale(1.8);
+   }
+
+   35% {
+      opacity: 1;
+      transform: scale(1);
+   }
+
+   100% {
+      opacity: 0;
+      transform: scale(0.5);
+   }
+}
+
+/* ========================================
+   СЕРДЕЧКИ РАЗЛЕТАЮТСЯ
+======================================== */
+
+@keyframes heartFly {
+   0% {
+      opacity: 0;
+
+      transform:
+         translate(0, 0)
+         scale(0.1)
+         rotate(0deg);
+   }
+
+   8% {
+      opacity: 1;
+
+      transform:
+         translate(0, 0)
+         scale(1.5)
+         rotate(-10deg);
+   }
+
+   20% {
+      opacity: 1;
+
+      transform:
+         translate(
+            calc(var(--x) * 0.15),
+            calc(var(--y) * 0.15)
+         )
+         scale(1.1)
+         rotate(10deg);
+   }
+
+   100% {
+      opacity: 0;
+
+      transform:
+         translate(var(--x), var(--y))
+         scale(0.65)
+         rotate(35deg);
+   }
+}
+
+/* ========================================
+   ЗАТУХАНИЕ ЦЕНТРАЛЬНОГО ВЗРЫВА
+======================================== */
+
+@keyframes explosionFade {
+   0% {
+      opacity: 1;
+   }
+
+   75% {
+      opacity: 1;
+   }
+
+   100% {
+      opacity: 0;
+   }
+}
+
+/* ========================================
+   УРАААА
+======================================== */
+
+@keyframes celebrationText {
+   0% {
+      opacity: 0;
+
+      transform:
+         translateX(-50%)
+         translateY(-15px)
+         scale(0.7);
+   }
+
+   15% {
+      opacity: 1;
+
+      transform:
+         translateX(-50%)
+         translateY(0)
+         scale(1.15);
+   }
+
+   30% {
+      transform:
+         translateX(-50%)
+         translateY(0)
+         scale(1);
+   }
+
+   75% {
+      opacity: 1;
+   }
+
+   100% {
+      opacity: 0;
+
+      transform:
+         translateX(-50%)
+         translateY(-10px)
+         scale(0.95);
+   }
+}
+
+/* ========================================
+   БУМ
+======================================== */
+
+@keyframes boom {
+   0% {
+      opacity: 1;
+
+      transform:
+         translate(-50%, -50%)
+         scale(0);
+   }
+
+   20% {
+      opacity: 1;
+
+      transform:
+         translate(-50%, -50%)
+         scale(1.5);
+   }
+
+   50% {
+      opacity: 0.8;
+
+      transform:
+         translate(-50%, -50%)
+         scale(4);
+   }
+
+   100% {
+      opacity: 0;
+
+      transform:
+         translate(-50%, -50%)
+         scale(8);
+   }
+}
+
+/* ========================================
+   ПОЯВЛЕНИЕ ВОСПОМИНАНИЯ
+======================================== */
+
+@keyframes appear {
+   from {
+      opacity: 0;
+
+      transform:
+         translateY(15px);
+   }
+
+   to {
+      opacity: 1;
+
+      transform:
+         translateY(0);
+   }
+}
+
+/* ========================================
+   ПЛАВАЮЩИЕ ФОНОВЫЕ СЕРДЕЧКИ
+======================================== */
+
+@keyframes float {
+   0%,
+   100% {
+      transform:
+         translateY(0)
+         rotate(0deg);
+   }
+
+   50% {
+      transform:
+         translateY(-25px)
+         rotate(8deg);
+   }
+}
+
+/* ========================================
+   МОБИЛЬНАЯ ВЕРСИЯ
+======================================== */
+
+@media (max-width: 600px) {
+   .loveContainer {
+      padding: 20px;
+   }
+
+   .loveCard {
+      min-height: 400px;
+
+      padding: 40px 20px;
+
+      border-radius: 25px;
+   }
+
+   .title {
+      font-size: 36px;
+   }
+
+   .buttons {
+      height: 170px;
+   }
+
+   .celebrationText {
+      top: 78px;
+
+      font-size: 32px;
+   }
+
+   .heartExplosion span {
+      font-size: 18px;
+   }
+
+   .firework::before,
+   .firework::after {
+      width: 110px;
+      height: 110px;
+
+      background-size: 22px 22px;
+   }
+}
+.memory {
+   width: 100%;
+
+   margin-top: 20px;
+   padding: 22px 25px;
+
+   border-radius: 20px;
+
+   background: rgba(255, 225, 234, 0.7);
+
+   cursor: pointer;
+
+   animation:
+      appear 0.6s ease forwards;
+
+   transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease,
+      background 0.25s ease;
+}
+
+.memory:hover {
+   transform: translateY(-5px);
+
+   background: rgba(255, 215, 228, 0.85);
+
+   box-shadow:
+      0 15px 35px rgba(180, 60, 100, 0.18);
+}
+
+.memory:active {
+   transform: translateY(-2px) scale(0.99);
+}
